@@ -1,0 +1,2 @@
+name	label	clearValue	loadOp	storeOp	depthClearValue	depthLoadOp	depthStoreOp	bundle
+rp0	ini rp0	.0 .2 .2 .1	clear	store	0	clear	store	bund0

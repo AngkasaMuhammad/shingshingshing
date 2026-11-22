@@ -1,0 +1,13 @@
+{
+	"bund0":{
+		"label":"ini bund0",
+		"commands":[
+			
+			["sp","chara0_pipe"],
+			["sib","chara0"],
+			["svb",0,"chara0"],
+			["svb",1,"zzchara0 inst"],
+			["dii","lihat chara0"]
+		]
+	}
+}

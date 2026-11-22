@@ -1,0 +1,11 @@
+{
+	"dii0": {
+		"_catatan":"draw indexed indirect values",
+		"attributes": [
+			{
+				"_name": "diival",
+				"format": "sint32"
+			}
+		]
+	}
+}

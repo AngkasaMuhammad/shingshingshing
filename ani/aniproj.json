@@ -1,0 +1,311 @@
+[
+	[
+		{
+			"text": "\n(module\n",
+			"visible": true,
+			"time": "0",
+			"speed": "1",
+			"running": false,
+			"color": [
+				{
+					"r": "255",
+					"g": "0",
+					"b": "255",
+					"frame": "0"
+				}
+			]
+		}
+	],
+	[
+		{
+			"text": "",
+			"visible": false,
+			"time": "0",
+			"speed": "1",
+			"running": false,
+			"color": [
+				{
+					"r": "255",
+					"g": "255",
+					"b": "255",
+					"frame": "0"
+				}
+			]
+		},
+		{
+			"text": "\n(global $:chara0\t\t(import \"wasmstr\" \"chara0\") i32)\n(global $:warna_chara0\t(import \"wasmstr\" \"warna_chara0\") i32)\n(global $:chara0pos0\t(import \"wasmstr\" \"chara0pos0\") i32)\n(global $:zzchara0-inst\t(import \"wasmstr\" \"zzchara0 inst\") i32)\n(global $:posinst\t\t(import \"wasmstr\" \"posinst\") i32)\n(global $:walking\t\t(import \"wasmstr\" \"walking\") i32)\n(global $:enco0\t\t\t(import \"wasmstr\" \"enco0\") i32)\n",
+			"visible": true,
+			"time": "0",
+			"speed": "1",
+			"running": false,
+			"color": [
+				{
+					"r": "255",
+					"g": "122",
+					"b": "122",
+					"frame": "0"
+				}
+			]
+		}
+	],
+	[
+		{
+			"text": "",
+			"visible": false,
+			"time": "0",
+			"speed": "1",
+			"running": false,
+			"color": [
+				{
+					"r": "255",
+					"g": "255",
+					"b": "255",
+					"frame": "0"
+				}
+			]
+		},
+		{
+			"text": "\n(memory $mem0 (export \"mem0\") 1)\n",
+			"visible": true,
+			"time": "0",
+			"speed": "1",
+			"running": false,
+			"color": [
+				{
+					"r": "255",
+					"g": "255",
+					"b": "255",
+					"frame": "0"
+				}
+			]
+		}
+	],
+	[
+		{
+			"text": "",
+			"visible": false,
+			"time": "0",
+			"speed": "1",
+			"running": false,
+			"color": [
+				{
+					"r": "255",
+					"g": "255",
+					"b": "255",
+					"frame": "0"
+				}
+			]
+		},
+		{
+			"text": "\n\t(func $setanivec7i\n\t\t(param $offset i32)\n\t\t(param $show i32)\n\t\t(param $slot i32)\n\t\t(param $bone i32)\n\t\t(param $time i32)\n\t\t(param $mesh i32)\n\t\t(param $index i32)\n\t\t(param $attr i32)\n\t\t(result i32) ;;offset\n\t\t\n\t\t\n\t\ti32.const 0 local.get $offset i32.add\n\t\tlocal.get $show\n\t\ti32.store $mem0\n\n\t\ti32.const 4 local.get $offset i32.add\n\t\tlocal.get $slot\n\t\ti32.store $mem0\n\n\t\ti32.const 8 local.get $offset i32.add\n\t\tlocal.get $bone\n\t\ti32.store $mem0\n\n\t\ti32.const 12 local.get $offset i32.add\n\t\tlocal.get $time\n\t\ti32.store $mem0\n\n\t\ti32.const 16 local.get $offset i32.add\n\t\tlocal.get $mesh\n\t\ti32.store $mem0\n\n\t\ti32.const 20 local.get $offset i32.add\n\t\tlocal.get $index\n\t\ti32.store $mem0\n\n\t\ti32.const 24 local.get $offset i32.add\n\t\tlocal.get $attr\n\t\ti32.store $mem0\n\t\t\n\t\t\n\t\tlocal.get $offset\n\t\ti32.const 28 ;; 7*4\n\t\ti32.add ;;offset baru\n\t)\n",
+			"visible": true,
+			"time": "0",
+			"speed": "1",
+			"running": false,
+			"color": [
+				{
+					"r": "155",
+					"g": "155",
+					"b": "0",
+					"frame": "0"
+				}
+			]
+		},
+		{
+			"text": "\n\t(func $anivecstriparr (export \"anivecstriparr\")\n\t\t(param $t i32)\n\t\t(param $dt i32)\n\t\t(param $env_t i32)\n\t\t(param $env_dt i32)\n\t\t\n\t\t(result i32)\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t;;show -->> 1 = proses, 0 = skip\n\t\t;;slot -->> action slot\n\t\t;;bone -->> bone ani\n\t\t;;time -->> frame time dalam ani\n\t\t;;mesh -->> target mesh\n\t\t;;index -->> target instance\n\t\t;;attr -->> target attribute\n\t\t\n\t\t\n\t\t\n\t\ti32.const 0 ;;offset\n\t\t\n;; 0 ========= strip0\n\t\ti32.const 1 ;;show\n\t\tglobal.get $:warna_chara0 ;;slot\n\t\tglobal.get $:chara0pos0 ;;bone\n\t\tlocal.get $env_t ;;time\n\t\tglobal.get $:zzchara0-inst\n\t\ti32.const 0 ;;index\n\t\tglobal.get $:posinst ;;attr\n\t\tcall $setanivec7i\n\t\t\n\t\t\n\t\t\n\t\t\n\t\ti32.const 28 ;; 7*4\n\t\ti32.div_s ;;jumlah strips\n\t)\n",
+			"visible": true,
+			"time": "0",
+			"speed": "1",
+			"running": false,
+			"color": [
+				{
+					"r": "155",
+					"g": "188",
+					"b": "155",
+					"frame": "0"
+				}
+			]
+		}
+	],
+	[
+		{
+			"text": "",
+			"visible": false,
+			"time": "0",
+			"speed": "1",
+			"running": false,
+			"color": [
+				{
+					"r": "255",
+					"g": "255",
+					"b": "255",
+					"frame": "0"
+				}
+			]
+		},
+		{
+			"text": "\n\t(func $setanimat3i\n\t\t(param $offset i32)\n\t\t(param $show i32)\n\t\t(param $slot i32)\n\t\t(param $time i32)\n\t\t(result i32) ;;offset\n\t\t\n\t\t\n\t\ti32.const 0 local.get $offset i32.add\n\t\tlocal.get $show\n\t\ti32.store $mem0\n\n\t\ti32.const 4 local.get $offset i32.add\n\t\tlocal.get $slot\n\t\ti32.store $mem0\n\n\t\ti32.const 8 local.get $offset i32.add\n\t\tlocal.get $time\n\t\ti32.store $mem0\n\t\t\n\t\t\n\t\tlocal.get $offset\n\t\ti32.const 12 ;; 3*4\n\t\ti32.add ;;offset baru\n\t)\n",
+			"visible": true,
+			"time": "0",
+			"speed": "1",
+			"running": false,
+			"color": [
+				{
+					"r": "000",
+					"g": "155",
+					"b": "255",
+					"frame": "0"
+				}
+			]
+		},
+		{
+			"text": "\n\t(func $animatstriparr (export \"animatstriparr\")\n\t\t(param $t i32)\n\t\t(param $dt i32)\n\t\t(param $env_t i32)\n\t\t(param $env_dt i32)\n\t\t\n\t\t(result i32)\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t;;show -->> 1 = proses, 0 = skip\n\t\t;;slot -->> action slot\n\t\t;;time -->> frame time dalam ani\n\t\t\n\t\t\n\t\t\n\t\ti32.const 0 ;;offset\n\t\t\n;; 0 ========= strip0 walking\n\t\ti32.const 1 ;;show\n\t\tglobal.get $:walking ;;slot\n\t\t\tlocal.get $env_t ;;time\n\t\t\ti32.const 1111\n\t\tcall $mod\n\t\tcall $setanimat3i\n\t\t\n(;========\n--------;)\n\t\t\n\t\t\n\t\t\n\t\t\n\t\ti32.const 12 ;; 3*4\n\t\ti32.div_s ;;jumlah strips\n\t)\n",
+			"visible": true,
+			"time": "322999.4538804416",
+			"speed": "6.4774774774774775",
+			"running": true,
+			"color": [
+				{
+					"r": "122",
+					"g": "188",
+					"b": "255",
+					"frame": "0"
+				},
+				{
+					"r": "222",
+					"g": "222",
+					"b": "222",
+					"frame": "1"
+				}
+			]
+		},
+		{
+			"text": "\n\t(func $setanimat4i\n\t\t(param $offset i32)\n\t\t(param $show i32)\n\t\t(param $strip i32)\n\t\t(param $mesh i32)\n\t\t(param $index i32)\n\t\t(result i32) ;;offset\n\t\t\n\t\t\n\t\ti32.const 0 local.get $offset i32.add\n\t\tlocal.get $show\n\t\ti32.store $mem0\n\n\t\ti32.const 4 local.get $offset i32.add\n\t\tlocal.get $strip\n\t\ti32.store $mem0\n\n\t\ti32.const 8 local.get $offset i32.add\n\t\tlocal.get $mesh\n\t\ti32.store $mem0\n\n\t\ti32.const 12 local.get $offset i32.add\n\t\tlocal.get $index\n\t\ti32.store $mem0\n\t\t\n\t\t\n\t\tlocal.get $offset\n\t\ti32.const 16 ;; 4*4\n\t\ti32.add ;;offset baru\n\t)\n",
+			"visible": true,
+			"time": "0",
+			"speed": "1",
+			"running": false,
+			"color": [
+				{
+					"r": "255",
+					"g": "122",
+					"b": "155",
+					"frame": "0"
+				}
+			]
+		},
+		{
+			"text": "\n\t(func $animattargetarr (export \"animattargetarr\")\n\t\t(param $t i32)\n\t\t(param $dt i32)\n\t\t(param $env_t i32)\n\t\t(param $env_dt i32)\n\t\t\n\t\t(result i32)\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t;;show -->> 1 = proses, 0 = skip\n\t\t;;strip -->> strip index\n\t\t;;mesh -->> target mesh\n\t\t;;index -->> target instance\n\t\t\n\t\t\n\t\ti32.const 0 ;;offset\n\t\t\n;; 0 ========= target0 Cube\n\t\ti32.const 1 ;;show\n\t\ti32.const 0 ;;strip\n\t\tglobal.get $:chara0 ;;mesh\n\t\ti32.const 0 ;;index\n\t\tcall $setanimat4i\n\t\t\n\t\t\n\t\t\n\t\t\n\t\ti32.const 16 ;; 4*4\n\t\ti32.div_s ;;jumlah target\n\t)\n",
+			"visible": true,
+			"time": "0",
+			"speed": "1",
+			"running": false,
+			"color": [
+				{
+					"r": "255",
+					"g": "188",
+					"b": "188",
+					"frame": "0"
+				}
+			]
+		}
+	],
+	[
+		{
+			"text": "",
+			"visible": false,
+			"time": "0",
+			"speed": "1",
+			"running": false,
+			"color": [
+				{
+					"r": "255",
+					"g": "255",
+					"b": "255",
+					"frame": "0"
+				}
+			]
+		},
+		{
+			"text": "\n\t(func $anienco (export \"anienco\")\n\t\t(param $t i32)\n\t\t(param $dt i32)\n\t\t(param $env_t i32)\n\t\t(param $env_dt i32)\n\t\t\n\t\t(result i32)\n\t\t\n\t\tglobal.get $:enco0\n\t)\n",
+			"visible": true,
+			"time": "0",
+			"speed": "1",
+			"running": false,
+			"color": [
+				{
+					"r": "255",
+					"g": "255",
+					"b": "255",
+					"frame": "0"
+				}
+			]
+		}
+	],
+	[
+		{
+			"text": "\n(;\n\n\n\n\n\n\n\n\n\n\n;)\n",
+			"visible": true,
+			"time": "0",
+			"speed": "1",
+			"running": false,
+			"color": [
+				{
+					"r": "255",
+					"g": "255",
+					"b": "255",
+					"frame": "0"
+				}
+			]
+		}
+	],
+	[
+		{
+			"text": "",
+			"visible": false,
+			"time": "0",
+			"speed": "1",
+			"running": false,
+			"color": [
+				{
+					"r": "255",
+					"g": "255",
+					"b": "255",
+					"frame": "0"
+				}
+			]
+		},
+		{
+			"text": "\n;;florred modulo ((a % b) + b) % b\n(func $mod\n\t(param $a i32)\n\t(param $b i32)\n\t(result i32)\n\n\n\n  ;; compute a % b\n  local.get $a\n  local.get $b\n  i32.rem_s\n\n  ;; add b\n  local.get $b\n  i32.add\n\n  ;; compute % b again\n  local.get $b\n  i32.rem_s\n)\n",
+			"visible": true,
+			"time": "0",
+			"speed": "1",
+			"running": false,
+			"color": [
+				{
+					"r": "55",
+					"g": "155",
+					"b": "55",
+					"frame": "0"
+				}
+			]
+		}
+	],
+	[
+		{
+			"text": "\n)\n",
+			"visible": true,
+			"time": "0",
+			"speed": "1",
+			"running": false,
+			"color": [
+				{
+					"r": "255",
+					"g": "0",
+					"b": "255",
+					"frame": "0"
+				}
+			]
+		}
+	]
+]

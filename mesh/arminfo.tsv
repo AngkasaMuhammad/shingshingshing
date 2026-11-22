@@ -1,0 +1,20 @@
+type	name
+arm	_empty arm
+arm	armchara0
+bone	root
+bone	b_badan
+bone	b_kepala
+bone	b_tanganatas L
+bone	b_tanganbawah L
+bone	b_tanganatas R
+bone	b_tanganbawah R
+bone	b_rok L
+bone	b_kakiatas L
+bone	b_kakibawah L
+bone	b_rok R
+bone	b_kakiatas R
+bone	b_kakibawah R
+bone	b_topi
+bone	b_bladecover
+bone	b_blade
+bone	au_stick

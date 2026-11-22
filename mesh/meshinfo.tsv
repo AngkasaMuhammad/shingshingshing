@@ -1,0 +1,3 @@
+name	voff	ioff	vcount	attrlay	arm	max_arm
+chara0	0	0	1122	chara0_vin	armchara0	2
+zzchara0 inst	26928	12504	2	chara0_instin	_empty arm	0

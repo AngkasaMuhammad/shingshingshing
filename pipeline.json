@@ -1,0 +1,48 @@
+{
+	"chara0_pipe":{
+		"label": "iniii chara0 pipe",
+		"vertex": {
+			"entryPoint":"chara0_vert",
+			"buffers":[
+				{
+					"attributes":"chara0_vin",
+					"stepMode":"vertex"
+				},
+				{
+					"attributes":"chara0_instin",
+					"stepMode":"instance"
+				}
+			]
+		},
+		"fragment": {
+			"entryPoint":"chara0_frag",
+			"targets": [
+				{
+					"blend": {
+						"alpha": {
+							"dstFactor": "one-minus-src-alpha",
+							"operation": "add",
+							"srcFactor": "one"
+						},
+						"color": {
+							"dstFactor": "one-minus-src-alpha",
+							"operation": "add",
+							"srcFactor": "src-alpha"
+						}
+					}
+				}
+			]
+		},
+		
+		"depthStencil": {
+			"depthCompare": "greater",
+			"depthWriteEnabled": true,
+			"format": "depth24plus"
+		},
+		
+		"primitive": {
+			"cullMode": "back",
+			"topology": "triangle-list"
+		}
+	}
+}
