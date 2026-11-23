@@ -33,7 +33,7 @@
 			]
 		},
 		{
-			"text": "\n(global $:chara0\t\t(import \"wasmstr\" \"chara0\") i32)\n(global $:warna_chara0\t(import \"wasmstr\" \"warna_chara0\") i32)\n(global $:chara0pos0\t(import \"wasmstr\" \"chara0pos0\") i32)\n(global $:zzchara0-inst\t(import \"wasmstr\" \"zzchara0 inst\") i32)\n(global $:posinst\t\t(import \"wasmstr\" \"posinst\") i32)\n(global $:walking\t\t(import \"wasmstr\" \"walking\") i32)\n(global $:enco0\t\t\t(import \"wasmstr\" \"enco0\") i32)\n",
+			"text": "\n(global $:chara0\t\t(import \"wasmstr\" \"chara0\") i32)\n(global $:warna_chara0\t(import \"wasmstr\" \"warna_chara0\") i32)\n(global $:chara0pos0\t(import \"wasmstr\" \"chara0pos0\") i32)\n(global $:zzchara0-inst\t(import \"wasmstr\" \"zzchara0 inst\") i32)\n(global $:posinst\t\t(import \"wasmstr\" \"posinst\") i32)\n(global $:walking\t\t(import \"wasmstr\" \"walking\") i32)\n(global $:maju\t\t\t(import \"wasmstr\" \"maju\") i32)\n(global $:enco0\t\t\t(import \"wasmstr\" \"enco0\") i32)\n",
 			"visible": true,
 			"time": "0",
 			"speed": "1",
@@ -159,9 +159,9 @@
 			]
 		},
 		{
-			"text": "\n\t(func $animatstriparr (export \"animatstriparr\")\n\t\t(param $t i32)\n\t\t(param $dt i32)\n\t\t(param $env_t i32)\n\t\t(param $env_dt i32)\n\t\t\n\t\t(result i32)\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t;;show -->> 1 = proses, 0 = skip\n\t\t;;slot -->> action slot\n\t\t;;time -->> frame time dalam ani\n\t\t\n\t\t\n\t\t\n\t\ti32.const 0 ;;offset\n\t\t\n;; 0 ========= strip0 walking\n\t\ti32.const 1 ;;show\n\t\tglobal.get $:walking ;;slot\n\t\t\tlocal.get $env_t ;;time\n\t\t\ti32.const 1111\n\t\tcall $mod\n\t\tcall $setanimat3i\n\t\t\n(;========\n--------;)\n\t\t\n\t\t\n\t\t\n\t\t\n\t\ti32.const 12 ;; 3*4\n\t\ti32.div_s ;;jumlah strips\n\t)\n",
+			"text": "\n\t(func $animatstriparr (export \"animatstriparr\")\n\t\t(param $t i32)\n\t\t(param $dt i32)\n\t\t(param $env_t i32)\n\t\t(param $env_dt i32)\n\t\t\n\t\t(result i32)\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t;;show -->> 1 = proses, 0 = skip\n\t\t;;slot -->> action slot\n\t\t;;time -->> frame time dalam ani\n\t\t\n\t\t\n\t\t\n\t\ti32.const 0 ;;offset\n\t\t\n;; [[ STRIP ]]\n\n;; 0 ========= walking\n\t\ti32.const 1 ;;show\n\t\tglobal.get $:walking ;;slot\n\t\t\tlocal.get $env_t ;;time\n\t\t\ti32.const 1000\n\t\tcall $mod\n\t\tcall $setanimat3i\n\t\t\n;; 1 ========= maju\n\t\ti32.const 1 ;;show\n\t\tglobal.get $:maju ;;slot\n\t\t\tlocal.get $env_t ;;time\n\t\t\ti32.const 1000\n\t\tcall $mod\n\t\tcall $setanimat3i\n\t\t\n(;========\n--------;)\n\t\t\n\t\t\n\t\t\n\t\t\n\t\ti32.const 12 ;; 3*4\n\t\ti32.div_s ;;jumlah strips\n\t)\n",
 			"visible": true,
-			"time": "322999.4538804416",
+			"time": "370728.1190055202",
 			"speed": "6.4774774774774775",
 			"running": true,
 			"color": [
@@ -176,6 +176,23 @@
 					"g": "222",
 					"b": "222",
 					"frame": "1"
+				}
+			]
+		}
+	],
+	[
+		{
+			"text": "",
+			"visible": false,
+			"time": "0",
+			"speed": "1",
+			"running": false,
+			"color": [
+				{
+					"r": "255",
+					"g": "255",
+					"b": "255",
+					"frame": "0"
 				}
 			]
 		},
@@ -195,7 +212,7 @@
 			]
 		},
 		{
-			"text": "\n\t(func $animattargetarr (export \"animattargetarr\")\n\t\t(param $t i32)\n\t\t(param $dt i32)\n\t\t(param $env_t i32)\n\t\t(param $env_dt i32)\n\t\t\n\t\t(result i32)\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t;;show -->> 1 = proses, 0 = skip\n\t\t;;strip -->> strip index\n\t\t;;mesh -->> target mesh\n\t\t;;index -->> target instance\n\t\t\n\t\t\n\t\ti32.const 0 ;;offset\n\t\t\n;; 0 ========= target0 Cube\n\t\ti32.const 1 ;;show\n\t\ti32.const 0 ;;strip\n\t\tglobal.get $:chara0 ;;mesh\n\t\ti32.const 0 ;;index\n\t\tcall $setanimat4i\n\t\t\n\t\t\n\t\t\n\t\t\n\t\ti32.const 16 ;; 4*4\n\t\ti32.div_s ;;jumlah target\n\t)\n",
+			"text": "\n\t(func $animattargetarr (export \"animattargetarr\")\n\t\t(param $t i32)\n\t\t(param $dt i32)\n\t\t(param $env_t i32)\n\t\t(param $env_dt i32)\n\t\t\n\t\t(result i32)\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t;;show -->> 1 = proses, 0 = skip\n\t\t;;strip -->> strip index\n\t\t;;mesh -->> target mesh\n\t\t;;index -->> target instance\n\t\t\n\t\t\n\t\ti32.const 0 ;;offset\n\t\t\n;; [[ TARGET ]]\n\n;; 0 ========= chara0|0\n\t\ti32.const 1 ;;show\n\t\ti32.const 0 ;;strip\n\t\tglobal.get $:chara0 ;;mesh\n\t\ti32.const 0 ;;index\n\t\tcall $setanimat4i\n\t\t\n;; 1 ========= chara0|0\n\t\ti32.const 1 ;;show\n\t\ti32.const 1 ;;strip\n\t\tglobal.get $:chara0 ;;mesh\n\t\ti32.const 1 ;;index\n\t\tcall $setanimat4i ;;sampe sini, glitch\n\t\t\n\t\t\n\t\t\n\t\t\n\t\ti32.const 16 ;; 4*4\n\t\ti32.div_s ;;jumlah target\n\t)\n",
 			"visible": true,
 			"time": "0",
 			"speed": "1",

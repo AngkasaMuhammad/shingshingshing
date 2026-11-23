@@ -63,7 +63,7 @@ struct chara0_instin{
 		pout,
 		unpack4x8unorm(bitcast<u32>(v.warna_out)),
 		nor,
-		inst.posinst*.3, //aku jadikan warnanya inst
+		//inst.posinst*.3, //aku jadikan warnanya inst
 	);
 }
 
@@ -72,11 +72,11 @@ struct chara0_out{
 	@location(0) p:vec4f,
 	@location(1) @interpolate(flat) warna:vec4f,
 	@location(2) nor:vec4f,
-	@location(3) warnainst:vec3f,
+	//@location(3) warnainst:vec3f,
 }
 
 @fragment fn chara0_frag(o:chara0_out) -> @location(0) vec4f {
-	return o.warna +vec4f(o.warnainst,.0,);
+	return o.warna; // +vec4f(o.warnainst,.0,);
 }
 
 const weiarr = array(

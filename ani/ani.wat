@@ -7,6 +7,7 @@
 (global $:zzchara0-inst	(import "wasmstr" "zzchara0 inst") i32)
 (global $:posinst		(import "wasmstr" "posinst") i32)
 (global $:walking		(import "wasmstr" "walking") i32)
+(global $:maju			(import "wasmstr" "maju") i32)
 (global $:enco0			(import "wasmstr" "enco0") i32)
 
 (memory $mem0 (export "mem0") 1)
@@ -142,11 +143,21 @@
 		
 		i32.const 0 ;;offset
 		
-;; 0 ========= strip0 walking
+;; [[ STRIP ]]
+
+;; 0 ========= walking
 		i32.const 1 ;;show
 		global.get $:walking ;;slot
 			local.get $env_t ;;time
-			i32.const 1111
+			i32.const 1000
+		call $mod
+		call $setanimat3i
+		
+;; 1 ========= maju
+		i32.const 1 ;;show
+		global.get $:maju ;;slot
+			local.get $env_t ;;time
+			i32.const 1000
 		call $mod
 		call $setanimat3i
 		
@@ -210,12 +221,21 @@
 		
 		i32.const 0 ;;offset
 		
-;; 0 ========= target0 Cube
+;; [[ TARGET ]]
+
+;; 0 ========= chara0|0
 		i32.const 1 ;;show
 		i32.const 0 ;;strip
 		global.get $:chara0 ;;mesh
 		i32.const 0 ;;index
 		call $setanimat4i
+		
+;; 1 ========= chara0|0
+		i32.const 1 ;;show
+		i32.const 1 ;;strip
+		global.get $:chara0 ;;mesh
+		i32.const 1 ;;index
+		call $setanimat4i ;;sampe sini, glitch
 		
 		
 		

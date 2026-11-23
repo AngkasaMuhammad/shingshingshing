@@ -1,142 +1,78 @@
 {
-	"walkingASLI": {
+	"walking": {
 		"root": [
 			0,
-			612
+			68
 		],
 		"b_badan": [
-			612,
+			68,
 			68
 		],
 		"b_kepala": [
-			680,
+			136,
 			68
 		],
 		"b_tanganatas L": [
-			748,
+			204,
 			68
 		],
 		"b_tanganbawah L": [
-			816,
+			272,
 			68
 		],
 		"b_tanganatas R": [
-			884,
+			340,
 			68
 		],
 		"b_tanganbawah R": [
-			952,
+			408,
 			68
 		],
 		"b_rok L": [
-			1020,
-			612
+			476,
+			544
 		],
 		"b_kakiatas L": [
-			1632,
-			612
+			1020,
+			340
 		],
 		"b_kakibawah L": [
+			1360,
+			68
+		],
+		"b_rok R": [
+			1428,
+			544
+		],
+		"b_kakiatas R": [
+			1972,
+			272
+		],
+		"b_kakibawah R": [
 			2244,
 			68
 		],
-		"b_rok R": [
-			2312,
-			612
-		],
-		"b_kakiatas R": [
-			2924,
-			612
-		],
-		"b_kakibawah R": [
-			3536,
-			68
-		],
 		"b_topi": [
-			3604,
+			2312,
 			68
 		],
 		"b_bladecover": [
-			3672,
+			2380,
 			68
 		],
 		"b_blade": [
-			3740,
+			2448,
 			68
 		],
 		"au_stick": [
-			3808,
+			2516,
 			68
 		]
 	},
-	"walking": {
+	"maju": {
 		"root": [
-			3876,
-			68
-		],
-		"b_badan": [
-			3944,
-			68
-		],
-		"b_kepala": [
-			4012,
-			68
-		],
-		"b_tanganatas L": [
-			4080,
-			68
-		],
-		"b_tanganbawah L": [
-			4148,
-			68
-		],
-		"b_tanganatas R": [
-			4216,
-			68
-		],
-		"b_tanganbawah R": [
-			4284,
-			68
-		],
-		"b_rok L": [
-			4352,
-			136
-		],
-		"b_kakiatas L": [
-			4488,
-			136
-		],
-		"b_kakibawah L": [
-			4624,
-			68
-		],
-		"b_rok R": [
-			4692,
-			136
-		],
-		"b_kakiatas R": [
-			4828,
-			136
-		],
-		"b_kakibawah R": [
-			4964,
-			68
-		],
-		"b_topi": [
-			5032,
-			68
-		],
-		"b_bladecover": [
-			5100,
-			68
-		],
-		"b_blade": [
-			5168,
-			68
-		],
-		"au_stick": [
-			5236,
-			68
+			2584,
+			544
 		]
 	}
 }
